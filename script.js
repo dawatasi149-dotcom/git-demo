@@ -1,23 +1,67 @@
-//class and object in js
-class ToyotaCar{
-    constructor(brand, milage) {
-        console.log("creating a new class");
-        this.brand = brand;
-        this.milage = milage;
-    }
-    start() {
-        console.log("start");
+function async(dataId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("data 1 ",dataId);
+            resolve("success");
+        }, 3000);
+    });
+}
+async(1).then((res) => {
+    return async(2);
+}).then((res) => {
+    console.log(res);
+})
 
-    }
-    stop() {
-        console.log("stop");
-    }
-}
-class supra extends ToyotaCar {
-    constructor(brand, milage, version) {
-        super(brand, milage);
-        this.version = version;
-    }
-}
-let fortuner = new supra("fortuner", 10, "v10");
-console.log(fortuner);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // learning promise in js 
+//     let promise = () => {
+//        return new Promise((resolve, reject) => {
+//             console.log("hello promise ");
+//             // resolve("success");
+//            reject("error");
+        
+//         });
+//     };
+
+// let p = promise();
+// p.then(() => { 
+//     console.log("hello world");
+// });
+
+// p.catch(() => {
+//     console.log("get regected");
+// })
+// function getData(dataId) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log("data", dataId);
+//             resolve("super");
+//         }, 5000);
+//     });
+// }
+// let final = getData(33);
